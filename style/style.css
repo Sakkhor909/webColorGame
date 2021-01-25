@@ -195,7 +195,7 @@ body {
   transition: fill 0.5s;
 }
 
-.headingButtons svg path:hover {
+.headingButtons svg:hover path {
   fill: #06ff27;
 }
 
@@ -825,21 +825,6 @@ footer {
   border: 2px solid #9999;
   -webkit-box-shadow: 2px 4px 0px #999999;
           box-shadow: 2px 4px 0px #999999;
-}
-
-#GameModal #box #msngrShare {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-#GameModal #box #msngrShare i {
-  font-size: 30px;
-  color: #1877f2;
-}
-
-#GameModal #box #msngrShare i:hover {
-  color: #015acf;
 }
 
 #GameModal #box #textSection {

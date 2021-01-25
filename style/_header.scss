@@ -25,7 +25,9 @@
     cursor: pointer;
     path {
       transition: fill 0.5s;
-      &:hover {
+    }
+    &:hover {
+      path {
         fill: $hoverColor;
       }
     }
