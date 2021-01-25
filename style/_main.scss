@@ -1,0 +1,211 @@
+@import "./variables";
+.cursor {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  visibility: hidden;
+}
+main {
+  width: 100%;
+  height: 70vh;
+  color: rgba(255, 255, 255, 0.842);
+  cursor: url("../Images/cursor.png"), auto;
+  transition: background-color 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  #screenBoard {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    #scoreBox {
+      background-color: $primaryColor;
+      align-self: flex-start;
+      padding: 15px;
+      border-bottom-right-radius: 5px;
+      cursor: auto;
+      #playerScore {
+        margin: 15px;
+        #score {
+          span {
+            background-color: rgba(255, 255, 255, 0.842);
+            border-radius: 2px;
+            color: black;
+            font-family: digit;
+            padding: 4px 10px;
+            border: 1px solid #999999;
+          }
+        }
+      }
+      #playerLevel {
+        margin: 15px;
+        #level {
+          background-color: rgba(255, 255, 255, 0.842);
+          border-radius: 2px;
+          color: black;
+          font-family: digit;
+          border: 1px solid #999999;
+          padding: 4px 27px;
+          margin-left: 3px;
+        }
+      }
+    }
+    #RGBbox {
+      align-self: baseline;
+      margin-left: 150px;
+      padding: 13px;
+      border: 3px solid #999999;
+      border-radius: 10px;
+      width: 500px;
+      text-align: center;
+      background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.4)
+      );
+      backdrop-filter: 20px;
+      transition: transform 1s;
+      cursor: auto;
+      box-shadow: 0 18px 0px #9999;
+      #countTIme {
+        margin: 5px;
+      }
+      h2 {
+        margin: 8px;
+        span:nth-child(1) {
+          color: red;
+        }
+        span:nth-child(2) {
+          color: green;
+        }
+        span:nth-child(3) {
+          color: blue;
+        }
+        #RGBvalue {
+          color: black;
+          span {
+            padding: 1px 5px;
+            background-color: rgba(255, 255, 255, 0.842);
+            border: 1px solid #999999;
+            border-radius: 5px;
+            box-shadow: 0 5px 0px #9999;
+          }
+        }
+      }
+    }
+    #hintButton {
+      align-self: center;
+      padding: 10px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      outline: none;
+      box-shadow: 2px 3px 0px #9999;
+      position: relative;
+      transition: transform 1s;
+      &:hover {
+        &::before {
+          content: "Hints";
+          position: absolute;
+          top: -30px;
+          font-weight: 900;
+        }
+        &:active {
+          transform: translateY(10px);
+          box-shadow: 1px 2px 0px #9999;
+        }
+      }
+      i {
+        font-size: 20px;
+      }
+      span {
+        position: absolute;
+        top: -10px;
+        right: -16px;
+        font-weight: 900;
+        background-color: #12afd6;
+        padding: 6px;
+        border: 1px solid white;
+        border-radius: 30%;
+      }
+    }
+    #gameInfoBoard {
+      background-color: $primaryColor;
+      align-self: flex-start;
+      padding: 15px;
+      border-bottom-left-radius: 5px;
+      width: 180px;
+      #chanceBox {
+        border-bottom: 3px solid rgb(15, 14, 14);
+        padding: 5px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        transition: transform 2s;
+        cursor: auto;
+        span {
+          border: 2px solid rgb(255, 255, 255);
+          border-radius: 3px;
+          margin-right: 10px;
+          padding: 8px;
+        }
+      }
+      #playerChance {
+        text-align: center;
+        padding: 5px;
+        cursor: auto;
+        #chance {
+          span {
+            background-color: rgba(255, 255, 255, 0.842);
+            border-radius: 2px;
+            color: black;
+            font-family: digit;
+            padding: 4px 10px;
+            border: 1px solid #999999;
+          }
+        }
+      }
+    }
+  }
+  #gameButtonBoard {
+    height: 50vh;
+    width: 50vw;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 18px 0px #9999;
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.4)
+    );
+
+    backdrop-filter: 20px;
+    div {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+    }
+    .gameButton {
+      background: none;
+      cursor: url("../Images/cursor.png"), auto;
+      border: none;
+      outline: none;
+      margin: 25px;
+      transition: transform 1s;
+      &:hover {
+        transform: scale3d(1.3, 1.3, 1.3);
+      }
+      &:focus {
+        transform: scale3d(1.3, 1.3, 1.3);
+      }
+    }
+  }
+}

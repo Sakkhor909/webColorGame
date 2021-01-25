@@ -1,0 +1,394 @@
+@import "./variables";
+@import "./_loading.scss";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: rgb(26, 27, 29);
+  background: linear-gradient(
+    90deg,
+    rgba(26, 27, 29, 1) 24%,
+    rgba(219, 224, 232, 1) 51%,
+    rgba(26, 27, 29, 1) 76%
+  );
+}
+/* Header */
+@import "./header";
+
+/* main */
+
+@import "./main";
+
+/* footer */
+
+@import "./footer";
+
+/* animation class */
+.popUp {
+  transform: scale3d(1.1, 1.1, 1.1);
+}
+.shaking {
+  transform: translate3d(-15px, 0, 0);
+}
+
+@keyframes changingBackground {
+  0% {
+    background-color: rgb(235, 43, 43);
+  }
+  50% {
+    background-color: rgb(58, 214, 30);
+  }
+  100% {
+    background-color: rgb(0, 43, 134);
+  }
+}
+@keyframes changingBoxbackground {
+  0% {
+    background-color: rgb(54, 0, 0);
+    box-shadow: 8px 10px 0px rgb(34, 0, 0);
+  }
+  50% {
+    background-color: rgb(9, 61, 0);
+    box-shadow: 8px 10px 0px rgb(6, 41, 0);
+  }
+  100% {
+    background-color: rgb(1, 17, 68);
+    box-shadow: 8px 10px 0px rgb(0, 23, 58);
+  }
+}
+@keyframes changingButtonsbackground {
+  0% {
+    background-color: rgb(209, 36, 36);
+    box-shadow: 2px 4px 5px rgba(209, 36, 36, 0.767);
+  }
+  50% {
+    background-color: rgb(91, 219, 69);
+    box-shadow: 2px 4px 5px rgba(92, 219, 69, 0.74);
+  }
+  100% {
+    background-color: rgb(51, 114, 202);
+    box-shadow: 2px 4px 0px rgba(51, 114, 202, 0.74);
+  }
+}
+#gameRules::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+#gameRules::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+#gameRules::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: rgb(17, 16, 16);
+}
+
+/* Start game Modal */
+.buttonStyle {
+  padding: 10px;
+  animation: changingButtonsbackground 15s cubic-bezier(1, 0, 0, 1) infinite
+    alternate;
+  transition: background-color 1s ease-in-out;
+  border-radius: 5px;
+  color: rgb(14, 13, 13);
+  outline: none;
+  margin: 0px 5px;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+  border: 1px solid black;
+  &:hover {
+    border-color: white;
+  }
+}
+.plateBackground {
+  transition: fill 2s;
+}
+.fa-user-tie {
+  font-size: 25px;
+}
+.brandImg {
+  width: 50px;
+  height: 50px;
+}
+#GameModal {
+  color: rgba(255, 255, 255, 0.842);
+  font-size: 20px;
+  font-weight: 800;
+  display: none;
+  z-index: 2;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  animation: changingBackground 15s cubic-bezier(1, 0, 0, 1) infinite alternate;
+  transition: background-color 1s ease-in-out;
+  border: 25px groove rgb(238, 230, 230);
+  justify-content: center;
+  align-items: center;
+  #box {
+    width: 1000px;
+    height: 80vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    animation: changingBoxbackground 15s cubic-bezier(1, 0, 0, 1) infinite
+      alternate;
+    transition: background-color 1s ease-in-out;
+    border-radius: 8px;
+    padding: 20px;
+    #brandSection {
+      display: flex;
+      background-color: rgba(17, 16, 16, 0.575);
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 4px 5px 2px rgb(0, 0, 0);
+      img {
+        margin: 20px 20px 20px 0px;
+      }
+      span {
+        h4 {
+          font-size: 20px;
+        }
+      }
+    }
+    #startPlaySection {
+      text-align: center;
+      background-color: rgba(17, 16, 16, 0.575);
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 4px 5px 2px rgb(0, 0, 0);
+    }
+    #colorModeForm {
+      padding: 10px;
+      margin: 5px;
+      select {
+        border-radius: 5px;
+        padding: 8px;
+        outline: none;
+        font-size: 15px;
+        border: 2px solid #9999;
+        box-shadow: 2px 4px 0px #999999;
+      }
+    }
+
+    #namesubmit {
+      input {
+        padding: 10px;
+        border-radius: 5px;
+        outline: none;
+        border: 2px solid #9999;
+        box-shadow: 2px 4px 0px #999999;
+      }
+    }
+
+    #textSection {
+      text-align: center;
+    }
+    #playAgainSection {
+      display: flex;
+      align-items: center;
+      background-color: rgb(17, 16, 16);
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 4px 5px 2px rgb(0, 0, 0);
+      margin: 8px;
+    }
+  }
+}
+#formSetting {
+  div {
+    margin: 10px;
+    #editName {
+      padding: 10px;
+      border-radius: 5px;
+      outline: none;
+      border: 2px solid #9999;
+      box-shadow: 2px 4px 0px #999999;
+    }
+    #sound {
+      transform: scale(1.5);
+      margin: 5px;
+    }
+  }
+
+  #saveSetting {
+    clear: both;
+    float: right;
+  }
+}
+// show level style
+#showlevel {
+  color: white;
+  z-index: 5;
+  position: fixed;
+  left: 48%;
+  top: 50%;
+  font-size: 25px;
+  font-weight: 900;
+  animation: levelani 1s linear forwards;
+}
+// Game rules modal
+#gameRules {
+  text-align: center;
+  overflow: auto;
+  list-style-position: inside;
+  display: flex;
+  flex-wrap: wrap;
+  border: 5px groove rgb(238, 230, 230);
+  margin-bottom: 20px;
+  li {
+    font-weight: 700;
+    width: 50%;
+    background-color: rgb(54, 54, 54);
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 20px;
+    div {
+      margin: 20px;
+    }
+  }
+}
+#directionBoard {
+  background-color: rgb(17, 16, 16);
+  padding: 15px;
+  border-radius: 2px;
+  align-self: stretch;
+  border: 5px groove rgb(238, 230, 230);
+  ul {
+    list-style-position: inside;
+    text-align: center;
+    a {
+      color: rgba(255, 255, 255, 0.842);
+    }
+  }
+}
+#okButton {
+  background-color: rgb(17, 16, 16);
+}
+/* For mobile */
+@media only screen and (max-width: 600px) {
+  .cursor {
+    display: none;
+  }
+
+  .brandImg {
+    width: 30px;
+    height: 30px;
+  }
+  header {
+    #headingSection-1 {
+      padding: 15px 0px 0px 5px;
+      h1 {
+        font-size: 17px;
+      }
+      h3 {
+        margin-left: 0;
+        font-size: 15px;
+        text-align: center;
+      }
+    }
+    #headerSection-2 {
+      margin-right: 0;
+    }
+  }
+  main {
+    #screenBoard {
+      width: 100%;
+      height: 100%;
+      #scoreBox {
+        order: 1;
+        padding: 3px;
+      }
+      #gameInfoBoard {
+        order: 3;
+      }
+      #hintButton {
+        position: absolute;
+        left: 38%;
+        top: 24%;
+      }
+      #RGBbox {
+        order: 4;
+        margin-left: 0px;
+      }
+    }
+    #gameButtonBoard {
+      width: 100%;
+      height: 100%;
+      .gameButton {
+        margin: 15px;
+        width: 70px;
+        height: 70px;
+        &:hover {
+          transform: initial;
+        }
+      }
+    }
+  }
+
+  #GameModal {
+    .buttonStyle {
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+    #box {
+      height: 100%;
+      width: 100%;
+      #brandSection {
+        img {
+          margin: 20px 5px 20px 0px;
+        }
+        h1 {
+          font-size: 20px;
+        }
+      }
+      #namesubmit {
+        input {
+          padding: 12px 5px;
+          margin-bottom: 10px;
+        }
+      }
+      div {
+        img {
+          margin: 0;
+        }
+        h1 {
+          font-size: 28px;
+        }
+      }
+      #gameRules li {
+        width: 100%;
+      }
+      #playAgainSection {
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+      }
+    }
+  }
+  @keyframes changingBoxbackground {
+    0% {
+      background-color: rgb(54, 0, 0);
+    }
+    50% {
+      background-color: rgb(9, 61, 0);
+    }
+    100% {
+      background-color: rgb(1, 17, 68);
+    }
+  }
+}

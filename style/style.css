@@ -1,0 +1,1069 @@
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+#loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 3px solid transparent;
+  border-top-color: red;
+  border-radius: 50%;
+  z-index: 5;
+  -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
+}
+
+#loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 3px solid transparent;
+  border-top-color: blue;
+  border-radius: 50%;
+  -webkit-animation: spin 3s linear infinite;
+          animation: spin 3s linear infinite;
+}
+
+#loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border: 3px solid transparent;
+  border-top-color: green;
+  border-radius: 50%;
+  -webkit-animation: spin 1.5s linear infinite;
+          animation: spin 1.5s linear infinite;
+}
+
+#loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background-color: #111010;
+  z-index: 4;
+}
+
+#loader-wrapper .loader-section.section-left {
+  left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+  right: 0;
+}
+
+/* Loaded */
+.loaded #loader-wrapper .loader-section.section-left {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.loaded #showlevel {
+  opacity: 0;
+}
+
+.loaded #loader {
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.loaded #loader-wrapper {
+  visibility: hidden;
+  -webkit-transition: all 0.3s 1s ease-out;
+  transition: all 0.3s 1s ease-out;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes levelani {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+}
+
+@keyframes levelani {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #1a1b1d;
+  background: -webkit-gradient(linear, left top, right top, color-stop(24%, #1a1b1d), color-stop(51%, #dbe0e8), color-stop(76%, #1a1b1d));
+  background: linear-gradient(90deg, #1a1b1d 24%, #dbe0e8 51%, #1a1b1d 76%);
+}
+
+/* Header */
+@font-face {
+  font-family: "digit";
+  src: url("../fonts/digital.ttf");
+}
+
+.RGBtext {
+  background: -webkit-linear-gradient(35deg, #cd0909 12%, #2eb602 55%, #1c2cd4 77%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.headingButtons {
+  background: none;
+  border: none;
+}
+
+.headingButtons:focus {
+  outline: none;
+}
+
+.headingButtons svg {
+  margin: 5px;
+  cursor: pointer;
+}
+
+.headingButtons svg path {
+  -webkit-transition: fill 0.5s;
+  transition: fill 0.5s;
+}
+
+.headingButtons svg path:hover {
+  fill: #06ff27;
+}
+
+header {
+  width: 100%;
+  height: 20vh;
+  color: rgba(255, 255, 255, 0.842);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 4px solid #111010;
+}
+
+header #headingSection-1 {
+  background-color: #1a1b1d;
+  padding: 20px;
+  border-bottom-right-radius: 5px;
+}
+
+header #headingSection-1 #branding {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header #headingSection-1 h3 {
+  margin-left: 50px;
+}
+
+header #headerSection-2 {
+  background-color: #1a1b1d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 10px;
+  width: 180px;
+}
+
+header #headerSection-2 #headingButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+header #headerSection-2 #playerInfo #playerName, header #headerSection-2 #playerInfo #playerHighScore {
+  border-radius: 5px;
+  background-color: #1a1b1d;
+  text-align: center;
+  padding: 5px;
+}
+
+header #headerSection-2 #playerInfo #playerHighScore {
+  padding: 0px 0px 5px 5px;
+}
+
+header #headerSection-2 #playerInfo #playerHighScore #highScore span {
+  background-color: rgba(255, 255, 255, 0.842);
+  color: black;
+  font-family: digit;
+  padding: 4px 10px;
+  border-radius: 2px;
+  border: 1px solid #999999;
+}
+
+/* main */
+.cursor {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 10;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  pointer-events: none;
+  visibility: hidden;
+}
+
+main {
+  width: 100%;
+  height: 70vh;
+  color: rgba(255, 255, 255, 0.842);
+  cursor: url("../Images/cursor.png"), auto;
+  -webkit-transition: background-color 1s ease-in-out;
+  transition: background-color 1s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main #screenBoard {
+  width: 100%;
+  height: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main #screenBoard #scoreBox {
+  background-color: #1a1b1d;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding: 15px;
+  border-bottom-right-radius: 5px;
+  cursor: auto;
+}
+
+main #screenBoard #scoreBox #playerScore {
+  margin: 15px;
+}
+
+main #screenBoard #scoreBox #playerScore #score span {
+  background-color: rgba(255, 255, 255, 0.842);
+  border-radius: 2px;
+  color: black;
+  font-family: digit;
+  padding: 4px 10px;
+  border: 1px solid #999999;
+}
+
+main #screenBoard #scoreBox #playerLevel {
+  margin: 15px;
+}
+
+main #screenBoard #scoreBox #playerLevel #level {
+  background-color: rgba(255, 255, 255, 0.842);
+  border-radius: 2px;
+  color: black;
+  font-family: digit;
+  border: 1px solid #999999;
+  padding: 4px 27px;
+  margin-left: 3px;
+}
+
+main #screenBoard #RGBbox {
+  -ms-flex-item-align: baseline;
+      align-self: baseline;
+  margin-left: 150px;
+  padding: 13px;
+  border: 3px solid #999999;
+  border-radius: 10px;
+  width: 500px;
+  text-align: center;
+  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.4)));
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4));
+  -webkit-backdrop-filter: 20px;
+          backdrop-filter: 20px;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  cursor: auto;
+  -webkit-box-shadow: 0 18px 0px #9999;
+          box-shadow: 0 18px 0px #9999;
+}
+
+main #screenBoard #RGBbox #countTIme {
+  margin: 5px;
+}
+
+main #screenBoard #RGBbox h2 {
+  margin: 8px;
+}
+
+main #screenBoard #RGBbox h2 span:nth-child(1) {
+  color: red;
+}
+
+main #screenBoard #RGBbox h2 span:nth-child(2) {
+  color: green;
+}
+
+main #screenBoard #RGBbox h2 span:nth-child(3) {
+  color: blue;
+}
+
+main #screenBoard #RGBbox h2 #RGBvalue {
+  color: black;
+}
+
+main #screenBoard #RGBbox h2 #RGBvalue span {
+  padding: 1px 5px;
+  background-color: rgba(255, 255, 255, 0.842);
+  border: 1px solid #999999;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 5px 0px #9999;
+          box-shadow: 0 5px 0px #9999;
+}
+
+main #screenBoard #hintButton {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  -webkit-box-shadow: 2px 3px 0px #9999;
+          box-shadow: 2px 3px 0px #9999;
+  position: relative;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+main #screenBoard #hintButton:hover::before {
+  content: "Hints";
+  position: absolute;
+  top: -30px;
+  font-weight: 900;
+}
+
+main #screenBoard #hintButton:hover:active {
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  -webkit-box-shadow: 1px 2px 0px #9999;
+          box-shadow: 1px 2px 0px #9999;
+}
+
+main #screenBoard #hintButton i {
+  font-size: 20px;
+}
+
+main #screenBoard #hintButton span {
+  position: absolute;
+  top: -10px;
+  right: -16px;
+  font-weight: 900;
+  background-color: #12afd6;
+  padding: 6px;
+  border: 1px solid white;
+  border-radius: 30%;
+}
+
+main #screenBoard #gameInfoBoard {
+  background-color: #1a1b1d;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding: 15px;
+  border-bottom-left-radius: 5px;
+  width: 180px;
+}
+
+main #screenBoard #gameInfoBoard #chanceBox {
+  border-bottom: 3px solid #0f0e0e;
+  padding: 5px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s;
+  cursor: auto;
+}
+
+main #screenBoard #gameInfoBoard #chanceBox span {
+  border: 2px solid white;
+  border-radius: 3px;
+  margin-right: 10px;
+  padding: 8px;
+}
+
+main #screenBoard #gameInfoBoard #playerChance {
+  text-align: center;
+  padding: 5px;
+  cursor: auto;
+}
+
+main #screenBoard #gameInfoBoard #playerChance #chance span {
+  background-color: rgba(255, 255, 255, 0.842);
+  border-radius: 2px;
+  color: black;
+  font-family: digit;
+  padding: 4px 10px;
+  border: 1px solid #999999;
+}
+
+main #gameButtonBoard {
+  height: 50vh;
+  width: 50vw;
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 18px 0px #9999;
+          box-shadow: 0 18px 0px #9999;
+  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.4)));
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4));
+  -webkit-backdrop-filter: 20px;
+          backdrop-filter: 20px;
+}
+
+main #gameButtonBoard div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main #gameButtonBoard .gameButton {
+  background: none;
+  cursor: url("../Images/cursor.png"), auto;
+  border: none;
+  outline: none;
+  margin: 25px;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+main #gameButtonBoard .gameButton:hover {
+  -webkit-transform: scale3d(1.3, 1.3, 1.3);
+          transform: scale3d(1.3, 1.3, 1.3);
+}
+
+main #gameButtonBoard .gameButton:focus {
+  -webkit-transform: scale3d(1.3, 1.3, 1.3);
+          transform: scale3d(1.3, 1.3, 1.3);
+}
+
+/* footer */
+footer {
+  width: 100%;
+  height: 10vh;
+}
+
+/* animation class */
+.popUp {
+  -webkit-transform: scale3d(1.1, 1.1, 1.1);
+          transform: scale3d(1.1, 1.1, 1.1);
+}
+
+.shaking {
+  -webkit-transform: translate3d(-15px, 0, 0);
+          transform: translate3d(-15px, 0, 0);
+}
+
+@-webkit-keyframes changingBackground {
+  0% {
+    background-color: #eb2b2b;
+  }
+  50% {
+    background-color: #3ad61e;
+  }
+  100% {
+    background-color: #002b86;
+  }
+}
+
+@keyframes changingBackground {
+  0% {
+    background-color: #eb2b2b;
+  }
+  50% {
+    background-color: #3ad61e;
+  }
+  100% {
+    background-color: #002b86;
+  }
+}
+
+@-webkit-keyframes changingBoxbackground {
+  0% {
+    background-color: #360000;
+    -webkit-box-shadow: 8px 10px 0px #220000;
+            box-shadow: 8px 10px 0px #220000;
+  }
+  50% {
+    background-color: #093d00;
+    -webkit-box-shadow: 8px 10px 0px #062900;
+            box-shadow: 8px 10px 0px #062900;
+  }
+  100% {
+    background-color: #011144;
+    -webkit-box-shadow: 8px 10px 0px #00173a;
+            box-shadow: 8px 10px 0px #00173a;
+  }
+}
+
+@keyframes changingBoxbackground {
+  0% {
+    background-color: #360000;
+    -webkit-box-shadow: 8px 10px 0px #220000;
+            box-shadow: 8px 10px 0px #220000;
+  }
+  50% {
+    background-color: #093d00;
+    -webkit-box-shadow: 8px 10px 0px #062900;
+            box-shadow: 8px 10px 0px #062900;
+  }
+  100% {
+    background-color: #011144;
+    -webkit-box-shadow: 8px 10px 0px #00173a;
+            box-shadow: 8px 10px 0px #00173a;
+  }
+}
+
+@-webkit-keyframes changingButtonsbackground {
+  0% {
+    background-color: #d12424;
+    -webkit-box-shadow: 2px 4px 5px rgba(209, 36, 36, 0.767);
+            box-shadow: 2px 4px 5px rgba(209, 36, 36, 0.767);
+  }
+  50% {
+    background-color: #5bdb45;
+    -webkit-box-shadow: 2px 4px 5px rgba(92, 219, 69, 0.74);
+            box-shadow: 2px 4px 5px rgba(92, 219, 69, 0.74);
+  }
+  100% {
+    background-color: #3372ca;
+    -webkit-box-shadow: 2px 4px 0px rgba(51, 114, 202, 0.74);
+            box-shadow: 2px 4px 0px rgba(51, 114, 202, 0.74);
+  }
+}
+
+@keyframes changingButtonsbackground {
+  0% {
+    background-color: #d12424;
+    -webkit-box-shadow: 2px 4px 5px rgba(209, 36, 36, 0.767);
+            box-shadow: 2px 4px 5px rgba(209, 36, 36, 0.767);
+  }
+  50% {
+    background-color: #5bdb45;
+    -webkit-box-shadow: 2px 4px 5px rgba(92, 219, 69, 0.74);
+            box-shadow: 2px 4px 5px rgba(92, 219, 69, 0.74);
+  }
+  100% {
+    background-color: #3372ca;
+    -webkit-box-shadow: 2px 4px 0px rgba(51, 114, 202, 0.74);
+            box-shadow: 2px 4px 0px rgba(51, 114, 202, 0.74);
+  }
+}
+
+#gameRules::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+#gameRules::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+#gameRules::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #111010;
+}
+
+/* Start game Modal */
+.buttonStyle {
+  padding: 10px;
+  -webkit-animation: changingButtonsbackground 15s cubic-bezier(1, 0, 0, 1) infinite alternate;
+          animation: changingButtonsbackground 15s cubic-bezier(1, 0, 0, 1) infinite alternate;
+  -webkit-transition: background-color 1s ease-in-out;
+  transition: background-color 1s ease-in-out;
+  border-radius: 5px;
+  color: #0e0d0d;
+  outline: none;
+  margin: 0px 5px;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.buttonStyle:hover {
+  border-color: white;
+}
+
+.plateBackground {
+  -webkit-transition: fill 2s;
+  transition: fill 2s;
+}
+
+.fa-user-tie {
+  font-size: 25px;
+}
+
+.brandImg {
+  width: 50px;
+  height: 50px;
+}
+
+#GameModal {
+  color: rgba(255, 255, 255, 0.842);
+  font-size: 20px;
+  font-weight: 800;
+  display: none;
+  z-index: 2;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  -webkit-animation: changingBackground 15s cubic-bezier(1, 0, 0, 1) infinite alternate;
+          animation: changingBackground 15s cubic-bezier(1, 0, 0, 1) infinite alternate;
+  -webkit-transition: background-color 1s ease-in-out;
+  transition: background-color 1s ease-in-out;
+  border: 25px groove #eee6e6;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#GameModal #box {
+  width: 1000px;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-animation: changingBoxbackground 15s cubic-bezier(1, 0, 0, 1) infinite alternate;
+          animation: changingBoxbackground 15s cubic-bezier(1, 0, 0, 1) infinite alternate;
+  -webkit-transition: background-color 1s ease-in-out;
+  transition: background-color 1s ease-in-out;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+#GameModal #box #brandSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: rgba(17, 16, 16, 0.575);
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 4px 5px 2px black;
+          box-shadow: 4px 5px 2px black;
+}
+
+#GameModal #box #brandSection img {
+  margin: 20px 20px 20px 0px;
+}
+
+#GameModal #box #brandSection span h4 {
+  font-size: 20px;
+}
+
+#GameModal #box #startPlaySection {
+  text-align: center;
+  background-color: rgba(17, 16, 16, 0.575);
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 4px 5px 2px black;
+          box-shadow: 4px 5px 2px black;
+}
+
+#GameModal #box #colorModeForm {
+  padding: 10px;
+  margin: 5px;
+}
+
+#GameModal #box #colorModeForm select {
+  border-radius: 5px;
+  padding: 8px;
+  outline: none;
+  font-size: 15px;
+  border: 2px solid #9999;
+  -webkit-box-shadow: 2px 4px 0px #999999;
+          box-shadow: 2px 4px 0px #999999;
+}
+
+#GameModal #box #namesubmit input {
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid #9999;
+  -webkit-box-shadow: 2px 4px 0px #999999;
+          box-shadow: 2px 4px 0px #999999;
+}
+
+#GameModal #box #msngrShare {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#GameModal #box #msngrShare i {
+  font-size: 30px;
+  color: #1877f2;
+}
+
+#GameModal #box #msngrShare i:hover {
+  color: #015acf;
+}
+
+#GameModal #box #textSection {
+  text-align: center;
+}
+
+#GameModal #box #playAgainSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #111010;
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 4px 5px 2px black;
+          box-shadow: 4px 5px 2px black;
+  margin: 8px;
+}
+
+#formSetting div {
+  margin: 10px;
+}
+
+#formSetting div #editName {
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid #9999;
+  -webkit-box-shadow: 2px 4px 0px #999999;
+          box-shadow: 2px 4px 0px #999999;
+}
+
+#formSetting div #sound {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  margin: 5px;
+}
+
+#formSetting #saveSetting {
+  clear: both;
+  float: right;
+}
+
+#showlevel {
+  color: white;
+  z-index: 5;
+  position: fixed;
+  left: 48%;
+  top: 50%;
+  font-size: 25px;
+  font-weight: 900;
+  -webkit-animation: levelani 1s linear forwards;
+          animation: levelani 1s linear forwards;
+}
+
+#gameRules {
+  text-align: center;
+  overflow: auto;
+  list-style-position: inside;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border: 5px groove #eee6e6;
+  margin-bottom: 20px;
+}
+
+#gameRules li {
+  font-weight: 700;
+  width: 50%;
+  background-color: #363636;
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 20px;
+}
+
+#gameRules li div {
+  margin: 20px;
+}
+
+#directionBoard {
+  background-color: #111010;
+  padding: 15px;
+  border-radius: 2px;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  border: 5px groove #eee6e6;
+}
+
+#directionBoard ul {
+  list-style-position: inside;
+  text-align: center;
+}
+
+#directionBoard ul a {
+  color: rgba(255, 255, 255, 0.842);
+}
+
+#okButton {
+  background-color: #111010;
+}
+
+/* For mobile */
+@media only screen and (max-width: 600px) {
+  .cursor {
+    display: none;
+  }
+  .brandImg {
+    width: 30px;
+    height: 30px;
+  }
+  header #headingSection-1 {
+    padding: 15px 0px 0px 5px;
+  }
+  header #headingSection-1 h1 {
+    font-size: 17px;
+  }
+  header #headingSection-1 h3 {
+    margin-left: 0;
+    font-size: 15px;
+    text-align: center;
+  }
+  header #headerSection-2 {
+    margin-right: 0;
+  }
+  main #screenBoard {
+    width: 100%;
+    height: 100%;
+  }
+  main #screenBoard #scoreBox {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    padding: 3px;
+  }
+  main #screenBoard #gameInfoBoard {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  main #screenBoard #hintButton {
+    position: absolute;
+    left: 38%;
+    top: 24%;
+  }
+  main #screenBoard #RGBbox {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+    margin-left: 0px;
+  }
+  main #gameButtonBoard {
+    width: 100%;
+    height: 100%;
+  }
+  main #gameButtonBoard .gameButton {
+    margin: 15px;
+    width: 70px;
+    height: 70px;
+  }
+  main #gameButtonBoard .gameButton:hover {
+    -webkit-transform: initial;
+            transform: initial;
+  }
+  #GameModal .buttonStyle {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  #GameModal #box {
+    height: 100%;
+    width: 100%;
+  }
+  #GameModal #box #brandSection img {
+    margin: 20px 5px 20px 0px;
+  }
+  #GameModal #box #brandSection h1 {
+    font-size: 20px;
+  }
+  #GameModal #box #namesubmit input {
+    padding: 12px 5px;
+    margin-bottom: 10px;
+  }
+  #GameModal #box div img {
+    margin: 0;
+  }
+  #GameModal #box div h1 {
+    font-size: 28px;
+  }
+  #GameModal #box #gameRules li {
+    width: 100%;
+  }
+  #GameModal #box #playAgainSection {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  @-webkit-keyframes changingBoxbackground {
+    0% {
+      background-color: #360000;
+    }
+    50% {
+      background-color: #093d00;
+    }
+    100% {
+      background-color: #011144;
+    }
+  }
+  @keyframes changingBoxbackground {
+    0% {
+      background-color: #360000;
+    }
+    50% {
+      background-color: #093d00;
+    }
+    100% {
+      background-color: #011144;
+    }
+  }
+}
+/*# sourceMappingURL=style.css.map */

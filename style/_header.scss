@@ -1,0 +1,88 @@
+@import "./variables";
+@font-face {
+  font-family: "digit";
+  src: url("../fonts/digital.ttf");
+}
+
+.RGBtext {
+  background: -webkit-linear-gradient(
+    35deg,
+    rgba(205, 9, 9, 1) 12%,
+    rgba(46, 182, 2, 1) 55%,
+    rgb(28, 44, 212) 77%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.headingButtons {
+  background: none;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+  svg {
+    margin: 5px;
+    cursor: pointer;
+    path {
+      transition: fill 0.5s;
+      &:hover {
+        fill: $hoverColor;
+      }
+    }
+  }
+}
+header {
+  width: 100%;
+  height: 20vh;
+  color: rgba(255, 255, 255, 0.842);
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 4px solid rgb(17, 16, 16);
+  #headingSection-1 {
+    background-color: $primaryColor;
+    padding: 20px;
+    border-bottom-right-radius: 5px;
+    #branding {
+      display: flex;
+      align-items: center;
+    }
+    h3 {
+      margin-left: 50px;
+    }
+  }
+  #headerSection-2 {
+    background-color: $primaryColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    width: 180px;
+    #headingButtons {
+      display: flex;
+      justify-content: flex-end;
+    }
+    #playerInfo {
+      #playerName {
+        border-radius: 5px;
+        background-color: $primaryColor;
+        text-align: center;
+        padding: 5px;
+      }
+      #playerHighScore {
+        @extend #playerName;
+        padding: 0px 0px 5px 5px;
+        #highScore {
+          span {
+            background-color: rgba(255, 255, 255, 0.842);
+            color: black;
+            font-family: digit;
+            padding: 4px 10px;
+            border-radius: 2px;
+            border: 1px solid #999999;
+          }
+        }
+      }
+    }
+  }
+}
