@@ -280,14 +280,8 @@ header #headerSection-2 #playerInfo #playerHighScore #highScore span {
 
 /* main */
 .cursor {
-  width: 3rem;
-  height: 3rem;
-  border: 2px solid black;
-  border-radius: 50%;
   position: absolute;
   z-index: 10;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   pointer-events: none;
   visibility: hidden;
 }
@@ -296,7 +290,7 @@ main {
   width: 100%;
   height: 70vh;
   color: rgba(255, 255, 255, 0.842);
-  cursor: url("../Images/cursor.png"), auto;
+  cursor: none;
   -webkit-transition: background-color 1s ease-in-out;
   transition: background-color 1s ease-in-out;
   display: -webkit-box;
@@ -327,7 +321,6 @@ main #screenBoard #scoreBox {
       align-self: flex-start;
   padding: 15px;
   border-bottom-right-radius: 5px;
-  cursor: auto;
 }
 
 main #screenBoard #scoreBox #playerScore {
@@ -374,7 +367,6 @@ main #screenBoard #RGBbox {
   transition: -webkit-transform 1s;
   transition: transform 1s;
   transition: transform 1s, -webkit-transform 1s;
-  cursor: auto;
   -webkit-box-shadow: 0 18px 0px #9999;
           box-shadow: 0 18px 0px #9999;
 }
@@ -419,7 +411,7 @@ main #screenBoard #hintButton {
   padding: 10px;
   border: none;
   border-radius: 50%;
-  cursor: pointer;
+  cursor: none;
   outline: none;
   -webkit-box-shadow: 2px 3px 0px #9999;
           box-shadow: 2px 3px 0px #9999;
@@ -482,7 +474,6 @@ main #screenBoard #gameInfoBoard #chanceBox {
   transition: -webkit-transform 2s;
   transition: transform 2s;
   transition: transform 2s, -webkit-transform 2s;
-  cursor: auto;
 }
 
 main #screenBoard #gameInfoBoard #chanceBox span {
@@ -495,7 +486,6 @@ main #screenBoard #gameInfoBoard #chanceBox span {
 main #screenBoard #gameInfoBoard #playerChance {
   text-align: center;
   padding: 5px;
-  cursor: auto;
 }
 
 main #screenBoard #gameInfoBoard #playerChance #chance span {
@@ -541,10 +531,10 @@ main #gameButtonBoard div {
 
 main #gameButtonBoard .gameButton {
   background: none;
-  cursor: url("../Images/cursor.png"), auto;
   border: none;
   outline: none;
   margin: 25px;
+  cursor: none;
   -webkit-transition: -webkit-transform 1s;
   transition: -webkit-transform 1s;
   transition: transform 1s;

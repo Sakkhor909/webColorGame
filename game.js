@@ -10,7 +10,7 @@ window.onload = function() {
 };
 
 const mouseCursor = document.querySelector('.cursor');
-const gameButtonBoard = document.querySelector("#gameButtonBoard");
+const gameButtonBoard = document.querySelector("main");
 const paintBuckets = document.querySelectorAll('.plateBackground');
 gameButtonBoard.addEventListener("mouseover", function(){
   mouseCursor.style.visibility = "visible";
@@ -20,7 +20,7 @@ gameButtonBoard.addEventListener("mouseleave", function(){
 })
 for (let paintBucket of paintBuckets) {
   paintBucket.addEventListener("mouseover", function(e){
-    document.querySelector('.cursor').style.backgroundColor = e.target.style.fill;
+    document.querySelector('.cls-1').style.fill = e.target.style.fill;
     })
 }
 
@@ -29,6 +29,8 @@ function cursor (e) {
   mouseCursor.style.top = e.pageY + "px";
   mouseCursor.style.left = e.pageX + "px";
 }
+
+
 
 // importing game tamplate
 import {Tamplate} from './tamplate.js'
@@ -352,6 +354,12 @@ export const Game = {
     timer.start();
   },
   Over() {
+     // play the audio
+     if (sessionStorage.getItem("gameOver") == "false") {
+      if (localStorage.getItem("sound") == 1) {
+        gameOverSound.play();
+      }
+     }
     sessionStorage.setItem("gameOver", true);
     sessionStorage.setItem('Guest', false);
     sessionStorage.setItem("startGame", false);
@@ -380,10 +388,7 @@ export const Game = {
     listensSartGame ();
     listenGeustStart ();
     listenHelpButton ();
-    // play the audio
-      if (localStorage.getItem("sound") == 1) {
-        gameOverSound.play();
-      }
+   
 
     
   }

@@ -48,10 +48,11 @@ export const Tamplate = {
         <div id="textSection">
         <h2 id='grettingText'> Congratulations ${DisplayName} ! </h2>
         <h3 id='gameOverScoreText'> You have score ${score}</h3>
-        <h3 id='shareText'> Share the score & Challenge your Friends <div class="fb-share-button" data-href="https://sakkhor909.github.io/webColorGame/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsakkhor909.github.io%2FwebColorGame%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div> </h3>
+        <h3 id='shareText'> Share the score & Challenge your Friends <div style="display: inline;" data-href="https://sakkhor909.github.io/webcolorgame" ><a class="buttonStyle" style="color: black; text-decoration: none;" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsakkhor909.github.io%2Fwebcolorgame&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share <svg width="20" height="20" viewBox="0 0 448 512">
+        <path fill="#000000" d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"></path>
+    </svg></a></div> </h3>
         </div>
         <div id='playAgainSection'>
-      
         <form id="colorModeForm">
         <label for="colorMode">Color Mode : </label>
         <select id="colorMode">
@@ -98,11 +99,6 @@ export const Tamplate = {
 
         <div>
         <button class='buttonStyle' id='bookmarkBTN'><svg width="16" height="16" viewBox="0 0 384 512"><path fill="#000000" d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"></path></svg> Bookmark this Game</button>
-        <div class="fb-login-button" data-width="30px" data-size="medium" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="true"></div>
-        <fb: login-button
-         scope="public_profile,email"
-            onlogin="checkLoginState();">
-            </fb: login - button >  
         <form id='formSetting'>
         <div>
         <label for='editName'> Edit your name  </label> 
