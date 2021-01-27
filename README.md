@@ -1,7 +1,6 @@
 # webcolorgame
 A HTML 5 game!
 Try it here : https://sakkhor909.github.io/webcolorgame/
-<div style="text-align: center;">
 <ul>
     <li>You have 6 color plate.     
     <div> <img src='Images/colorPlate.jpg' width='200px' /> </div> </li>
@@ -20,4 +19,4 @@ Try it here : https://sakkhor909.github.io/webcolorgame/
       </li>
       <li>If all chances are gone then, game over.<br> Test your knowledge and score 50 to complete 5 levels</li>
 </ul>
- </div>
+
