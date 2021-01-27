@@ -9,6 +9,8 @@ window.onload = function() {
   }, 800);
 };
 
+document.addEventListener('contextmenu', event => event.preventDefault());
+
 const mouseCursor = document.querySelector('.cursor');
 const gameButtonBoard = document.querySelector("main");
 const paintBuckets = document.querySelectorAll('.plateBackground');
@@ -33,24 +35,21 @@ function cursor (e) {
 
 
 // importing game tamplate
-import {Tamplate} from './tamplate.js'
-
 // importing game color
-import {Color} from './color.js'
-
+import { Color } from './color.js';
+import { displayData } from './display.js';
 // importing game player
-import {Player} from './player.js'
-
+import { Player } from './player.js';
 // importing game sound object
-import {gameOverSound} from './sound.js'
-import {gameRightColorSound} from './sound.js'
-import {gameChanceSound} from './sound.js'
-import {gameHintSound} from './sound.js'
-
+import { gameChanceSound, gameHintSound, gameOverSound, gameRightColorSound } from './sound.js';
+import { Tamplate } from './tamplate.js';
 // importing game timer
-import {timer} from './timer.js'
+import { timer } from './timer.js';
 
-import {displayData} from './display.js'
+
+
+
+
 
 // Function for start game
 export function startGame(evt) {
@@ -384,6 +383,7 @@ export const Game = {
     } else {
       document.getElementById("namesubmit").style.display = "none";
     }
+    document.querySelector('meta[name="fbSharedescription"]').setAttribute("content", `${DisplayName} Scored ${score}`);
     listenNameSubmit ();
     listensSartGame ();
     listenGeustStart ();
