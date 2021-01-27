@@ -372,7 +372,6 @@ export const Game = {
     } else {
       DisplayName = "";
     }
-    document.querySelector('meta[name="fbSharedescription"]').setAttribute("content", `${DisplayName} Scored ${score}`);
     document.getElementById("box").innerHTML = Tamplate.gameOverTamplate (DisplayName, score);
     if (score == 0) {
       Tamplate.zeroScore ();
