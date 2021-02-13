@@ -12,7 +12,7 @@ Try it here : https://sakkhor909.github.io/webcolorgame/
      however, if you choose the wrong color, your chances reduce
     <div> <img src='Images/chanceBoard.jpg' width='200px' /> </div>
     </li>
-    <li> If you stack in a similiar color, use hints button, in every level you will get limited hints
+    <li> If you stack in a similar color, use hints button, in every level you will get limited hints
      <div> <img src='Images/hintButton.jpg' width='120px' height='120px'/> </div>
      If you choose right color 3 times in a row, Your chances will increase
      <div> <img src='Images/chance increase box.jpg' width='200px' /> </div>
